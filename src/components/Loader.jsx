@@ -22,7 +22,7 @@ const Loader = () => {
             duration: 1,
             top: '-100%',  // Ensure your parent container has `position: relative`
             ease: "power2.inOut",
-        })
+        },+2)
         .set(loaderRef.current, { backdropFilter: "blur(10px)" }); // Ensure final state is smooth
     }, []);
 
