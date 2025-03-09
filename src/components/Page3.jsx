@@ -1,7 +1,13 @@
-import React, { useState } from "react";
-
+import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useState, useRef } from "react";
 
 const Page3 = () => {
+  const scrollRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start end", "end start"],
+  });
+
   const [images] = useState([
     {
       id: 1,
@@ -33,34 +39,35 @@ const Page3 = () => {
     },
   ]);
 
-  // ✅ Define Mouse Hover Effects Using Tailwind CSS
-  const handleMouseEnter = (event) => {
-    event.currentTarget.querySelector(".imgpage3").classList.add("rounded-full", "scale-105");
-  };
-
-  const handleMouseLeave = (event) => {
-    event.currentTarget.querySelector(".imgpage3").classList.remove("rounded-full", "scale-105");
-  };
-
   return (
-    <div className="w-full lg:w-[90%] min-h-screen flex flex-col lg:flex-row lg:flex-wrap items-center relative z-10 justify-between gap-[20vw] lg:gap-[5vw] p-8">
+    <div
+      ref={scrollRef}
+      className="w-full lg:w-[90%] min-h-screen flex flex-col lg:flex-row lg:flex-wrap items-center justify-center gap-16 p-8 relative z-20"
+    >
       {images.map((item, index) => (
-        <div
+        <motion.div
           key={index}
-          className="w-full lg:w-[45%] lg:h-[70vh] rounded-2xl cursor-pointer overflow-hidden relative"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          initial={{
+            opacity:0
+          }}
+    
+          whileInView={{
+            opacity:1
+          }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full lg:w-[45%] lg:h-[70vh] rounded-2xl cursor-pointer relative z-20 origin-bottom"
         >
-          <img
+          <motion.img
             src={item.image}
             alt=""
-            className="w-full h-full object-cover imgpage3 transition-all duration-500 ease-in-out"
+            className="w-full h-full object-cover imgpage3 "
           />
-          <div className="p-4 z-10 absolute bottom-5 left-5 text-white bg-black bg-opacity-50 rounded-lg px-3 py-2">
+          <motion.div className="absolute bottom-5 left-5 text-white rounded-lg px-3 py-2 backdrop-blur-lg">
             <h3 className="text-xl font-bold">{item.title}</h3>
             <p className="text-sm">{item.des}</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       ))}
     </div>
   );

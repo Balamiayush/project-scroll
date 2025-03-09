@@ -1,13 +1,15 @@
+import LocomotiveScroll from "locomotive-scroll";
 import React, { useState } from "react";
 
 const Rightheading = () => {
-  const [count] = useState(60);
 
+  const [count] = useState(20);
+  
   return (
     <div
       className="min-h-screen w-[8%]  bg-white   hidden fixed right-0 z-[100] lg:flex flex-col items-center justify-center "
       data-scroll
-      data-scroll-speed="50"
+      data-scroll-speed="20"
       data-scroll-position="center"
     >
       {Array.from({ length: count }).map((_, index) => (

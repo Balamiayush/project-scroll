@@ -28,7 +28,7 @@ body{
   transition: all 0.5s ease-in-out;
 }
 .imgpage3:hover{
-  border-radius: 100%;
+  border-radius: 50%;
 }
 .tilted-text {
   writing-mode: vertical-rl;
