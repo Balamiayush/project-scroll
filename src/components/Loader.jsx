@@ -29,7 +29,7 @@ const Loader = () => {
     const words = ["The", "Creative", "studio", "in", "sport"];
 
     return (
-        <div ref={loaderRef} className='w-full loader h-screen bg-[#9BFA00] absolute top-0 left-0 flex items-center justify-center overflow-hidden z-[1000]'>
+        <div ref={loaderRef} className='w-full loader h-screen bg-[#9BFA00] fixed top-0 left-0 flex items-center justify-center overflow-hidden z-[1000]'>
             <div ref={h1Ref} className='uppercase w-full flex items-center justify-center text-2xl lg:text-[3.5rem]  overflow-hidden font-semibold'>
                 {words.map((word, index) => (
                     <span className='span lg:h-[10vh] overflow-hidden' key={index}>{word}&nbsp;</span>

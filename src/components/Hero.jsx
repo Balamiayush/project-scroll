@@ -38,18 +38,18 @@ const Hero = () => {
         start: "top top",
         end: "bottom top",
         scrub: 1,
-        markers: false, // ✅ Remove after debugging
+ 
       },
     });
     gsap.to(".hero h1,a", {
-      opacity:0.1,
+      opacity:1,
       duration: 1,
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
         end: "bottom top",
         scrub: 1,
-        markers: false, // ✅ Remove after debugging
+
       },
     });
   });

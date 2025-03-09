@@ -8,20 +8,9 @@ const Navbar = () => {
   gsap.registerPlugin(ScrollTrigger) 
   const itemsRef = useRef([])
   useGSAP(()=>{
-    gsap.to("ul",{
-      duration:0.7,
-      scale:0.8,
-      scrollTrigger:{
-        trigger: ".loader",
-        start: "top",
-        end: "bottom",
-        scrub: true,
-        // markers:true
-      }
-    })
-    gsap.to("svg",{
-      duration:0.7,
-      scale:0.8,
+    gsap.to("ul,svg",{
+      duration:0.5,
+      scale:0.6,
       scrollTrigger:{
         trigger: ".loader",
         start: "top",
@@ -84,7 +73,7 @@ const Navbar = () => {
   return (
     <div
 
-    className='w-full flex h-40 font-[StabilGrotesk-Regular] fixed navbar top-0 p-8 items-center justify-between z-[100]'>
+    className='w-[90%] flex h-40 font-[StabilGrotesk-Regular] fixed navbar top-0 p-8 items-center justify-between z-[100]'>
       <svg height="820" viewBox="0 0 1066 820" width="80" xmlns="http://www.w3.org/2000/svg">
         <path d="m532.999 546.66h-266.499v-273.32h532.196l266.504-273.34h-598.835l-466.365 478.335v341.665h333.115l399.749-409.99v409.99h266.481v-478.335h-266.481z" fill="#fff"></path>
       </svg>
