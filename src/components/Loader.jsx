@@ -12,7 +12,7 @@ const Loader = () => {
         // Initial backdropFilter setup (needed for smooth transition)
         gsap.set(loaderRef.current, { backdropFilter: "blur(0px)" });
 
-        tl.from("span", {
+        tl.from("h1", {
             duration: 1,
             y: '100%',
             stagger: 0.2,
@@ -30,9 +30,11 @@ const Loader = () => {
 
     return (
         <div ref={loaderRef} className='w-full loader h-screen bg-[#9BFA00] fixed top-0 left-0 flex items-center justify-center overflow-hidden z-[1000]'>
-            <div ref={h1Ref} className='uppercase w-full flex items-center justify-center text-2xl lg:text-[3.5rem]  overflow-hidden font-semibold'>
+            <div
+            
+            ref={h1Ref} className='uppercase w-full font-[StabilGrotesk-Regular] flex items-center justify-center text-2xl lg:text-[3rem]  overflow-hidden font-semibold'>
                 {words.map((word, index) => (
-                    <span className='span lg:h-[10vh] overflow-hidden' key={index}>{word}&nbsp;</span>
+                    <h1 className='span    lg:h-[10vh] overflow-hidden ' key={index}>{word}&nbsp;</h1>
                 ))}
             </div>
         </div>

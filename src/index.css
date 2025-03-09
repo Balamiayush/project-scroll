@@ -21,3 +21,17 @@
   font-family: 'StabilGrotesk-Regular';
   src: url('/public/fonts/StabilGrotesk-Regular.otf');
 }
+body{
+  overflow: hidden;
+}
+.imgpage3{
+  transition: all 0.5s ease-in-out;
+}
+.imgpage3:hover{
+  border-radius: 100%;
+}
+.tilted-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 2px;
+}

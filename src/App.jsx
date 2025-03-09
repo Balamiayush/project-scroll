@@ -31,7 +31,7 @@ const App = () => {
 
   })
   return (
-    <div className='w-full h-[200vh]  '>
+    <div className='w-full h-[500vh]  '>
       <Rightheading/>
       <div className="circle w-5 h-5 bg-green-600 fixed z-[1000] rounded-full"></div>
       <Loader/>

@@ -21,6 +21,10 @@ const Hero = () => {
       id: 3,
       src: "https://gh22.codebydennis.com/media/pages/home/4539e25d6b-1728463366/02-1920x-q72.jpg",
     },
+    {
+      id:4,
+      src: "https://gh22.codebydennis.com/media/pages/home/c64f7525ae-1728463371/porsche-1920x-q72.jpg"
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

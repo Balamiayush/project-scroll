@@ -57,8 +57,9 @@ const Images = ({ images }) => {
 
     // ✅ Fix: Instead of hiding images, reduce opacity slightly
     gsap.to(imgRefs.current, {
-      opacity: 0, // Instead of 0, make them slightly visible
+      opacity: 1, // Instead of 0, make them slightly visible
       ease: "power2.inOut",
+      background:"black",
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",

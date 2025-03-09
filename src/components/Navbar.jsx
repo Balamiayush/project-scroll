@@ -79,7 +79,7 @@ const Navbar = () => {
       </svg>
       
       <motion.ul 
-        className='flex ul text-white flex-col relative gap-1 top-5 uppercase items-center justify-center overflow-hidden text-lg  lg:text-2xl'
+        className='flex ul text-white flex-col relative gap-1 top-5 uppercase items-center justify-center overflow-hidden lg:text-2xl'
         // whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
       >
         {
