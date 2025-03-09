@@ -14,7 +14,7 @@ const Page4 = () => {
                 </h1>
                 <a href="#" className='lg:text-[1.5rem]'>About</a>
             </div>
-           
+           <hr />
         </div>
         </div>
 
