@@ -3,6 +3,7 @@ import gsap from "gsap";
 import Navbar from "./Navbar";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Image from "./Images";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +24,7 @@ const Hero = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
   const imgRefs = useRef([]);
   const heroTextRef = useRef(null); // Ref for text animation
 
@@ -30,6 +32,17 @@ const Hero = () => {
   useGSAP(() => {
     gsap.to(".heading2", {
       x: "10%", // Moves right instead of leaving the screen
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        markers: false, // ✅ Remove after debugging
+      },
+    });
+    gsap.to(".hero h1,a", {
+      opacity:0.1,
       duration: 1,
       scrollTrigger: {
         trigger: ".hero",
@@ -48,7 +61,7 @@ const Hero = () => {
     }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
 
   const transitionToNextImage = () => {
     const nextIndex = (currentIndex + 1) % images.length; // Calculate next index
@@ -78,29 +91,33 @@ const Hero = () => {
     );
   };
 
+  // Update time every second
+  useEffect(() => {
+    const timeInterval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(timeInterval);
+  }, []);
+
   return (
     <div className="w-full h-screen hero relative overflow-hidden">
       <Navbar />
-      {images.map((image, index) => (
-        <img
-          key={image.id}
-          ref={(el) => (imgRefs.current[index] = el)}
-          src={image.src}
-          alt={`Hero Image ${index + 1}`}
-          className={`w-full h-full object-cover absolute transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-1" : "opacity-0"
-          }`}
-          style={{ zIndex: index === currentIndex ? 2 : 1 }}
-        />
-      ))}
+      <Image Gallery images={images} />
       <div
         ref={heroTextRef}
-        className="herotext leading-none left-8 absolute top-[40%] text-[4rem]  lg:text-[8rem]  font-semibold z-10 text-white"
+        className="herotext leading-none left-8 absolute top-[40%] lg:top-[35%] text-[5.5rem]  lg:text-[8rem]   z-10 text-white "
       >
-        <h1>24/7</h1>
-        <h1 className="heading2">HUNTING</h1>
-        <h1>THE NEXT</h1>
+        <h1 className="font-[PPEiko-Regular]">24/7</h1>
+        <h1 className="heading2 font-[StabilGrotesk-Regular]">HUNTING</h1>
+        <h1 className="font-[StabilGrotesk-Regular]">THE NEXT</h1>
       </div>
+      <div className="herofooter  font-[StabilGrotesk-Regular] flex justify-between w-full absolute z-10   p-6    bottom-0  text-white ">
+  <a className="time text-1xl hidden lg:block ">{currentTime}</a>
+  <a className="time text-1xl  ">THE CREATIVE STUDIO INSPORTS</a>
+  <a className="time text-1xl  ">BASED IN THE NETHERLANDS</a>
+</div>
+     
     </div>
   );
 };

@@ -14,7 +14,7 @@ const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
 
   return (
-    <div className='w-full h-[900vh]  '>
+    <div className='w-full h-[200vh]  '>
       <Loader/>
       <Hero/>
       

@@ -19,6 +19,17 @@ const Navbar = () => {
         // markers:true
       }
     })
+    gsap.to("svg",{
+      duration:0.7,
+      scale:0.8,
+      scrollTrigger:{
+        trigger: ".loader",
+        start: "top",
+        end: "bottom",
+        scrub: true,
+        // markers:true
+      }
+    })
   })
   useEffect(() => {
     // Reset refs array when component mounts
@@ -71,13 +82,15 @@ const Navbar = () => {
   }
 
   return (
-    <div className='w-full flex h-40 fixed navbar top-0 p-8 items-center justify-between z-[100]'>
+    <div
+
+    className='w-full flex h-40 font-[StabilGrotesk-Regular] fixed navbar top-0 p-8 items-center justify-between z-[100]'>
       <svg height="820" viewBox="0 0 1066 820" width="80" xmlns="http://www.w3.org/2000/svg">
         <path d="m532.999 546.66h-266.499v-273.32h532.196l266.504-273.34h-598.835l-466.365 478.335v341.665h333.115l399.749-409.99v409.99h266.481v-478.335h-266.481z" fill="#fff"></path>
       </svg>
       
       <motion.ul 
-        className='flex ul text-white flex-col relative gap-1 top-5 uppercase items-center justify-center overflow-hidden lg:text-2xl'
+        className='flex ul text-white flex-col relative gap-1 top-5 uppercase items-center justify-center overflow-hidden text-lg  lg:text-2xl'
         // whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
       >
         {
@@ -99,7 +112,7 @@ const Navbar = () => {
                   {item}
                 </motion.span>
                 <motion.span 
-                  className='absolute text-green-500 span2 block transform-style-3d backface-hidden'
+                  className='absolute text-green-500 font-[PPEiko-Regular] span2 block transform-style-3d backface-hidden'
                   style={{ 
                     transformOrigin: "center center",
                     opacity: 0
