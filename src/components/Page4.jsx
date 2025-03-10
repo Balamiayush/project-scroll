@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Marquee from './Marquee'
 const Page4 = () => {
     return (
         
@@ -16,6 +16,7 @@ const Page4 = () => {
             </div>
            <hr />
         </div>
+            <Marquee/>
         </div>
 
     )

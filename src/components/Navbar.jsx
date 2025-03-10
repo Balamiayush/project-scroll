@@ -94,13 +94,13 @@ const Navbar = () => {
                 // whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 500 }}
               >
-                <motion.span 
+                <motion.a
                   className='span1 relative block transform-style-3d backface-hidden'
                   style={{ transformOrigin: "center center" }}
                 >
                   {item}
-                </motion.span>
-                <motion.span 
+                </motion.a>
+                <motion.a 
                   className='absolute text-green-500 font-[PPEiko-Regular] span2 block transform-style-3d backface-hidden'
                   style={{ 
                     transformOrigin: "center center",
@@ -108,7 +108,7 @@ const Navbar = () => {
                   }}
                 >
                   {item}
-                </motion.span>
+                </motion.a>
               </motion.li>
             )
           })

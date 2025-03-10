@@ -7,7 +7,7 @@ const Rightheading = () => {
 
   return (
     <div
-      className="min-h-screen w-[8%]  bg-white    fixed right-0 z-[100] lg:flex flex-col items-center justify-center "
+      className="min-h-screen w-[8%]  bg-white  hidden  fixed right-0 z-[100] lg:flex flex-col items-center justify-center "
       data-scroll
       data-scroll-speed="22"
       data-scroll-position="center"
